@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Assessment Forms | Westcon Comstor Middle East</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .landing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .logo-large {
+            max-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .form-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .form-card {
+            flex: 0 0 300px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            background-color: white;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .form-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .form-card p {
+            color: var(--text-color);
+            margin-bottom: 20px;
+            min-height: 80px;
+        }
+        
+        .card-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        .card-btn:hover {
+            background-color: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="landing-container">
+        <img src="images/logo-placeholder.svg" alt="Westcon Comstor Middle East Logo" class="logo-large">
+        <h1>Credit Assessment Forms</h1>
+        <p>Select the appropriate form based on the available customer information</p>
+        
+        <div class="form-cards">
+            <div class="form-card">
+                <h3>Complete Information</h3>
+                <p>Use this form when comprehensive credit information is available, including credit reports, financial statements, and bank statements.</p>
+                <a href="complete_information_form.html" class="card-btn">Open Form</a>
+            </div>
+            
+            <div class="form-card">
+                <h3>Partial Information</h3>
+                <p>Use this form when credit information is not available but audited financial statements and bank statements of account are available.</p>
+                <a href="partial_information_form.html" class="card-btn">Open Form</a>
+            </div>
+            
+            <div class="form-card">
+                <h3>Minimal Information</h3>
+                <p>Use this form when credit information is not available and customer has refused to share financial statements or bank statements.</p>
+                <a href="minimal_information_form.html" class="card-btn">Open Form</a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Westcon Comstor Middle East. All rights reserved.</p>
+            <p>For assistance, please contact <a href="mailto:credit@westconcomstor-me.com">credit@westconcomstor-me.com</a></p>
+        </div>
+    </footer>
+</body>
+</html>

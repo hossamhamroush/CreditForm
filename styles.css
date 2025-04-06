@@ -1,0 +1,504 @@
+/* 
+ * Westcon Comstor Middle East
+ * Credit Assessment Forms Stylesheet
+ * Created: April 2025
+ */
+
+/* Global Styles and Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0056b3;
+    --primary-dark: #003d7a;
+    --primary-light: #e6f0ff;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --border-color: #dee2e6;
+    --text-color: #333;
+    --text-muted: #6c757d;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --border-radius: 4px;
+    --box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #f5f5f5;
+    padding-bottom: 60px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-container {
+    margin-bottom: 20px;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 2.2rem;
+}
+
+header h2 {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+/* Progress Steps */
+.progress-container {
+    margin: 30px 0;
+}
+
+.progress-steps {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    position: relative;
+}
+
+.progress-steps::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+
+.progress-steps li {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    font-size: 0.85rem;
+    color: var(--secondary-color);
+    flex: 1;
+    padding: 0 5px;
+}
+
+.progress-steps li::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    margin: 0 auto 10px;
+}
+
+.progress-steps li.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.progress-steps li.active::before {
+    border-color: var(--primary-color);
+    background-color: var(--primary-light);
+}
+
+.progress-steps li.completed::before {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 15px;
+}
+
+/* Form Sections */
+.form-step {
+    display: none;
+    animation: fadeIn 0.5s;
+}
+
+.form-step.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.form-step h3 {
+    color: var(--primary-color);
+    margin: 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.form-step h4 {
+    color: var(--secondary-color);
+    margin: 25px 0 15px;
+    font-size: 1.1rem;
+}
+
+.section-info {
+    background-color: var(--primary-light);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.section-info p {
+    margin: 0;
+    color: var(--primary-dark);
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+
+.form-group.half {
+    flex: 0 0 50%;
+    padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+    .form-group.half {
+        flex: 0 0 100%;
+    }
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.required {
+    color: var(--danger-color);
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-family: var(--font-family);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.2);
+}
+
+input[type="file"] {
+    padding: 8px 0;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+.field-help {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 5px;
+}
+
+/* Radio and Checkbox Groups */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.radio-label,
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 5px;
+}
+
+.radio-label input[type="radio"],
+.checkbox-label input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.inline-input {
+    width: auto !important;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+/* Input with Prefix/Suffix */
+.input-with-prefix,
+.input-with-suffix {
+    display: flex;
+    align-items: center;
+}
+
+.input-prefix,
+.input-suffix {
+    padding: 10px 12px;
+    background-color: var(--light-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+}
+
+.input-prefix {
+    border-right: none;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+.input-suffix {
+    border-left: none;
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.input-with-prefix input {
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+}
+
+.input-with-suffix input {
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+}
+
+/* Conditional Inputs */
+.conditional-input,
+.conditional-section {
+    display: none;
+    margin-top: 10px;
+}
+
+/* Reference Sections */
+.reference-section {
+    background-color: var(--light-color);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin-bottom: 25px;
+}
+
+.reference-section h4 {
+    margin-top: 0;
+    color: var(--dark-color);
+}
+
+/* Terms Container */
+.terms-container {
+    background-color: var(--light-color);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    margin: 30px 0;
+}
+
+.terms-container .checkbox-label {
+    align-items: flex-start;
+}
+
+.terms-container .checkbox-label input {
+    margin-top: 5px;
+}
+
+/* Navigation Buttons */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.next-btn,
+.submit-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.next-btn:hover,
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.prev-btn {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.prev-btn:hover {
+    background-color: #5a6268;
+}
+
+/* Form Submitted Message */
+.form-submitted-message {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.form-submitted-message h2 {
+    color: var(--success-color);
+    margin-bottom: 20px;
+}
+
+#referenceNumber {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Validation Styles */
+input:invalid,
+select:invalid,
+textarea:invalid {
+    border-color: var(--danger-color);
+}
+
+.error-message {
+    color: var(--danger-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    padding: 20px;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .progress-steps li {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .progress-steps li span {
+        display: none;
+    }
+    
+    .progress-steps li::after {
+        content: attr(data-step);
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+    
+    .form-navigation {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        padding: 0;
+    }
+    
+    .container {
+        box-shadow: none;
+        max-width: 100%;
+    }
+    
+    .progress-container,
+    .form-navigation,
+    footer {
+        display: none;
+    }
+    
+    .form-step {
+        display: block !important;
+        page-break-after: always;
+    }
+    
+    input, select, textarea {
+        border: 1px solid #ccc;
+    }
+}

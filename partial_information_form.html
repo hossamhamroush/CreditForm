@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Assessment Form - Partial Information | Westcon Comstor Middle East</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <img src="logo-placeholder.png" alt="Westcon Comstor Middle East Logo" class="logo">
+            </div>
+            <h1>Credit Assessment Form</h1>
+            <h2>Partial Information (Financial Statements and Bank SOA Available)</h2>
+        </header>
+
+        <form id="partialInfoCreditForm" class="multi-step-form">
+            <!-- Progress indicator -->
+            <div class="progress-container">
+                <ul class="progress-steps">
+                    <li class="active" data-step="1">Customer Information</li>
+                    <li data-step="2">Contact Details</li>
+                    <li data-step="3">Credit Request</li>
+                    <li data-step="4">Financial Information</li>
+                    <li data-step="5">Bank Statement Analysis</li>
+                    <li data-step="6">References & Management</li>
+                    <li data-step="7">Documentation</li>
+                </ul>
+            </div>
+
+            <!-- Step 1: Customer Information -->
+            <section class="form-step active" id="step1">
+                <h3>Customer Information</h3>
+                
+                <div class="form-group">
+                    <label for="companyName">Company Name <span class="required">*</span></label>
+                    <input type="text" id="companyName" name="companyName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tradingAs">Trading As</label>
+                    <input type="text" id="tradingAs" name="tradingAs">
+                </div>
+                
+                <div class="form-group">
+                    <label for="registrationNumber">Company Registration Number <span class="required">*</span></label>
+                    <input type="text" id="registrationNumber" name="registrationNumber" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="taxNumber">Tax Registration Number <span class="required">*</span></label>
+                    <input type="text" id="taxNumber" name="taxNumber" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="yearsInBusiness">Years in Business <span class="required">*</span></label>
+                        <input type="number" id="yearsInBusiness" name="yearsInBusiness" min="0" required>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="employees">Number of Employees <span class="required">*</span></label>
+                        <input type="number" id="employees" name="employees" min="1" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Company Type <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="companyType" value="public" required> Public
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="companyType" value="private" required> Private
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Business Category <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="businessCategory" value="systemIntegrator" required> System Integrator
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="businessCategory" value="serviceProvider" required> Service Provider
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="businessCategory" value="commercial" required> Commercial
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="businessCategory" value="telecommunications" required> Telecommunications
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="businessCategory" value="infoCommTech" required> Info Comm Tech
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="businessCategory" value="endUser" required> End User
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="businessCategory" value="other" required> Other
+                            <input type="text" id="otherBusinessCategory" name="otherBusinessCategory" class="inline-input">
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn next-btn">Next: Contact Details</button>
+                </div>
+            </section>
+
+            <!-- Step 2: Contact Information -->
+            <section class="form-step" id="step2">
+                <h3>Contact Information</h3>
+                
+                <div class="form-group">
+                    <label for="businessAddress">Business Address <span class="required">*</span></label>
+                    <textarea id="businessAddress" name="businessAddress" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="country">Country <span class="required">*</span></label>
+                        <select id="country" name="country" required>
+                            <option value="">Select Country</option>
+                            <option value="UAE">United Arab Emirates</option>
+                            <option value="KSA">Saudi Arabia</option>
+                            <option value="Qatar">Qatar</option>
+                            <option value="Kuwait">Kuwait</option>
+                            <option value="Bahrain">Bahrain</option>
+                            <option value="Oman">Oman</option>
+                            <!-- More countries can be added -->
+                        </select>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="postCode">Post Code</label>
+                        <input type="text" id="postCode" name="postCode">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="mainPhone">Main Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="mainPhone" name="mainPhone" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="invoiceEmail">Email Address for Invoices <span class="required">*</span></label>
+                    <input type="email" id="invoiceEmail" name="invoiceEmail" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="primaryContact">Primary Contact Person <span class="required">*</span></label>
+                    <input type="text" id="primaryContact" name="primaryContact" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="position">Position <span class="required">*</span></label>
+                    <input type="text" id="position" name="position" required>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="contactPhone">Phone <span class="required">*</span></label>
+                        <input type="tel" id="contactPhone" name="contactPhone" required>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="contactEmail">Email <span class="required">*</span></label>
+                        <input type="email" id="contactEmail" name="contactEmail" required>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn prev-btn">Previous</button>
+                    <button type="button" class="btn next-btn">Next: Credit Request</button>
+                </div>
+            </section>
+
+            <!-- Step 3: Credit Request Details -->
+            <section class="form-step" id="step3">
+                <h3>Credit Request Details</h3>
+                
+                <div class="form-group">
+                    <label for="requestedCreditLimit">Requested Credit Limit <span class="required">*</span></label>
+                    <div class="input-with-prefix">
+                        <span class="input-prefix">$</span>
+                        <input type="number" id="requestedCreditLimit" name="requestedCreditLimit" min="0" step="1000" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="requestedPaymentTerms">Requested Payment Terms <span class="required">*</span></label>
+                    <select id="requestedPaymentTerms" name="requestedPaymentTerms" required>
+                        <option value="">Select Payment Terms</option>
+                        <option value="net15">Net 15 days</option>
+                        <option value="net30">Net 30 days</option>
+                        <option value="net45">Net 45 days</option>
+                        <option value="net60">Net 60 days</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <input type="text" id="otherPaymentTerms" name="otherPaymentTerms" class="conditional-input" data-condition="requestedPaymentTerms" data-condition-value="other" placeholder="Please specify">
+                </div>
+                
+                <div class="form-group">
+                    <label for="monthlyPurchaseVolume">Estimated Monthly Purchase Volume <span class="required">*</span></label>
+                    <div class="input-with-prefix">
+                        <span class="input-prefix">$</span>
+                        <input type="number" id="monthlyPurchaseVolume" name="monthlyPurchaseVolume" min="0" step="1000" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productsOfInterest">Products/Services of Interest <span class="required">*</span></label>
+                    <textarea id="productsOfInterest" name="productsOfInterest" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn prev-btn">Previous</button>
+                    <button type="button" class="btn next-btn">Next: Financial Information</button>
+                </div>
+            </section>
+
+            <!-- Step 4: Financial Information -->
+            <section class="form-step" id="step4">
+                <h3>Financial Information</h3>
+                
+                <div class="section-info">
+                    <p>Please provide the following financial information based on your financial statements.</p>
+                </div>
+                
+                <h4>Key Financial Ratios</h4>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="currentRatio">Current Ratio <span class="required">*</span></label>
+                        <input type="number" id="currentRatio" name="currentRatio" step="0.01" min="0" required>
+                        <div class="field-help">Current Assets / Current Liabilities</div>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="quickRatio">Quick Ratio <span class="required">*</span></label>
+                        <input type="number" id="quickRatio" name="quickRatio" step="0.01" min="0" required>
+                        <div class="field-help">(Current Assets - Inventory) / Current Liabilities</div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="debtToEquityRatio">Debt-to-Equity Ratio <span class="required">*</span></label>
+                        <input type="number" id="debtToEquityRatio" name="debtToEquityRatio" step="0.01" min="0" required>
+                        <div class="field-help">Total Liabilities / Shareholders' Equity</div>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="grossProfitMargin">Gross Profit Margin (%) <span class="required">*</span></label>
+                        <input type="number" id="grossProfitMargin" name="grossProfitMargin" step="0.01" min="0" max="100" required>
+                        <div class="field-help">(Revenue - COGS) / Revenue × 100</div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="netProfitMargin">Net Profit Margin (%) <span class="required">*</span></label>
+                        <input type="number" id="netProfitMargin" name="netProfitMargin" step="0.01" min="-100" max="100" required>
+                        <div class="field-help">Net Income / Revenue × 100</div>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="returnOnAssets">Return on Assets (%) <span class="required">*</span></label>
+                        <input type="number" id="returnOnAssets" name="returnOnAssets" step="0.01" min="-100" max="100" required>
+                        <div class="field-help">Net Income / Total Assets × 100</div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="returnOnEquity">Return on Equity (%) <span class="required">*</span></label>
+                        <input type="number" id="returnOnEquity" name="returnOnEquity" step="0.01" min="-100" max="100" required>
+                        <div class="field-help">Net Income / Shareholders' Equity × 100</div>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="inventoryTurnover">Inventory Turnover <span class="required">*</span></label>
+                        <input type="number" id="inventoryTurnover" name="inventoryTurnover" step="0.01" min="0" required>
+                        <div class="field-help">COGS / Average Inventory</div>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="accountsReceivableTurnover">Accounts Receivable Turnover <span class="required">*</span></label>
+                        <input type="number" id="accountsReceivableTurnover" name="accountsReceivableTurnover" step="0.01" min="0" required>
+                        <div class="field-help">Net Credit Sales / Average Accounts Receivable</div>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="daysSalesOutstanding">Days Sales Outstanding <span class="required">*</span></label>
+                        <input type="number" id="daysSalesOutstanding" name="daysSalesOutstanding" step="0.01" min="0" required>
+                        <div class="field-help">365 / Accounts Receivable Turnover</div>
+                    </div>
+                </div>
+                
+                <h4>Financial Trend Analysis (Last 3 Years if Available)</h4>
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="revenueGrowthRate">Revenue Growth Rate (%) <span class="required">*</span></label>
+                        <input type="number" id="revenueGrowthRate" name="revenueGrowthRate" step="0.01" min="-100" max="1000" required>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="profitGrowthRate">Profit Growth Rate (%) <span class="required">*</span></label>
+                        <input type="number" id="profitGrowthRate" name="profitGrowthRate" step="0.01" min="-100" max="1000" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="cashFlowTrend">Cash Flow Trend <span class="required">*</span></label>
+                        <select id="cashFlowTrend" name="cashFlowTrend" required>
+                            <option value="">Select Trend</option>
+                            <option value="increasing">Increasing</option>
+                            <option value="stable">Stable</option>
+                            <option value="decreasing">Decreasing</option>
+                            <option value="volatile">Volatile</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="workingCapitalTrend">Working Capital Trend <span class="required">*</span></label>
+                        <select id="workingCapitalTrend" name="workingCapitalTrend" required>
+                            <option value="">Select Trend</option>
+                            <option value="increasing">Increasing</option>
+                            <option value="stable">Stable</option>
+                            <option value="decreasing">Decreasing</option>
+                            <option value="volatile">Volatile</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <h4>Financial Statement Verification</h4>
+                <div class="form-group">
+                    <label>Type of Financial Statements <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="financialStatementsType" value="audited" required> Audited
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="financialStatementsType" value="unaudited" required> Unaudited
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="financialStatementsType" value="managementAccounts" required> Management Accounts
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="accountingStandards">Accounting Standards Used <span class="required">*</span></label>
+                    <input type="text" id="accountingStandards" name="accountingStandards" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="auditOpinion">Audit Opinion (if audited)</label>
+                    <input type="text" id="auditOpinion" name="auditOpinion">
+                </div>
+                
+                <div class="form-group">
+                    <label for="auditorFirm">Auditor/Accounting Firm <span class="required">*</span></label>
+                    <input type="text" id="auditorFirm" name="auditorFirm" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="significantNotes">Significant Notes from Statements</label>
+                    <textarea id="significantNotes" name="significantNotes" rows="3"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="qualificationsConcerns">Any Qualifications or Concerns</label>
+                    <textarea id="qualificationsConcerns" name="qualificationsConcerns" rows="3"></textarea>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn prev-btn">Previous</button>
+                    <button type="button" class="btn next-btn">Next: Bank Statement Analysis</button>
+                </div>
+            </section>
+
+            <!-- Step 5: Bank Statement Analysis -->
+            <section class="form-step" id="step5">
+                <h3>Bank Statement Analysis</h3>
+                
+                <div class="section-info">
+                    <p>Please provide information about your bank statements for the last 6 months.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bankName">Bank Name <span class="required">*</span></label>
+                    <input type="text" id="bankName" name="bankName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="periodCovered">Period Covered <span class="required">*</span></label>
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="periodFrom">From <span class="required">*</span></label>
+                            <input type="date" id="periodFrom" name="periodFrom" required>
+                        </div>
+                        <div class="form-group half">
+                            <label for="periodTo">To <span class="required">*</span></label>
+                            <input type="date" id="periodTo" name="periodTo" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="averageMonthlyBalance">Average Monthly Balance <span class="required">*</span></label>
+                    <div class="input-with-prefix">
+                        <span class="input-prefix">$</span>
+                        <input type="number" id="averageMonthlyBalance" name="averageMonthlyBalance" min="0" step="1000" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="frequencyOfDeposits">Frequency of Deposits <span class="required">*</span></label>
+                        <select id="frequencyOfDeposits" name="frequencyOfDeposits" required>
+                            <option value="">Select Frequency</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="biweekly">Bi-weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="irregular">Irregular</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="frequencyOfWithdrawals">Frequency of Withdrawals <span class="required">*</span></label>
+                        <select id="frequencyOfWithdrawals" name="frequencyOfWithdrawals" required>
+                            <option value="">Select Frequency</option>
+                            <option value="daily">Daily</option>
+                            <option value="weekly">Weekly</option>
+                            <option value="biweekly">Bi-weekly</option>
+                            <option value="monthly">Monthly</option>
+                            <option value="irregular">Irregular</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group half">
+                        <label for="overdraftInstances">Overdraft Instances <span class="required">*</span></label>
+                        <input type="number" id="overdraftInstances" name="overdraftInstances" min="0" required>
+                    </div>
+                    
+                    <div class="form-group half">
+                        <label for="returnedChecks">Returned Checks <span class="required">*</span></label>
+                        <input type="number" id="returnedChecks" name="returnedChecks" min="0" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Cash Flow Pattern <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="cashFlowPattern" value="stable" required> Stable
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="cashFlowPattern" value="fluctuating" required> Fluctuating
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="cashFlowPattern" value="declining" required> Declining
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="cashFlowPattern" value="growing" required> Growing
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="seasonalityObserved">Seasonality Observed</label>
+                    <textarea id="seasonalityObserved" name="seasonalityObserved" rows="2"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="majorTransactions">Major Transactions (if any)</label>
+                    <textarea id="majorTransactions" name="majorTransactions" rows="2"></textarea>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn prev-btn">Previous</button>
+                    <button type="button" class="btn next-btn">Next: References & Management</button>
+                </div>
+            </section>
+
+            <!-- Step 6: References & Management -->
+            <section class="form-step" id="step6">
+                <h3>Trade References</h3>
+                
+                <div class="section-info">
+                    <p>Please provide at least three trade references that we can contact.</p>
+                </div>
+                
+                <div class="reference-section">
+                    <h4>Reference 1</h4>
+                    <div class="form-group">
+                        <label for="ref1Company">Company <span class="required">*</span></label>
+                        <input type="text" id="ref1Company" name="ref1Company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ref1ContactPerson">Contact Person <span class="required">*</span></label>
+                        <input type="text" id="ref1ContactPerson" name="ref1ContactPerson" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="ref1Duration">Relationship Duration <span class="required">*</span></label>
+                            <div class="input-with-suffix">
+                                <input type="number" id="ref1Duration" name="ref1Duration" min="0" required>
+                                <span class="input-suffix">years</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group half">
+                            <label for="ref1CreditLimit">Credit Limit</label>
+                            <div class="input-with-prefix">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="ref1CreditLimit" name="ref1CreditLimit" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="ref1PaymentTerms">Payment Terms</label>
+                            <input type="text" id="ref1PaymentTerms" name="ref1PaymentTerms">
+                        </div>
+                        
+                        <div class="form-group half">
+                            <label for="ref1PaymentHistory">Payment History</label>
+                            <select id="ref1PaymentHistory" name="ref1PaymentHistory">
+                                <option value="">Select</option>
+                                <option value="excellent">Excellent</option>
+                                <option value="good">Good</option>
+                                <option value="fair">Fair</option>
+                                <option value="poor">Poor</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference-section">
+                    <h4>Reference 2</h4>
+                    <div class="form-group">
+                        <label for="ref2Company">Company <span class="required">*</span></label>
+                        <input type="text" id="ref2Company" name="ref2Company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ref2ContactPerson">Contact Person <span class="required">*</span></label>
+                        <input type="text" id="ref2ContactPerson" name="ref2ContactPerson" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="ref2Duration">Relationship Duration <span class="required">*</span></label>
+                            <div class="input-with-suffix">
+                                <input type="number" id="ref2Duration" name="ref2Duration" min="0" required>
+                                <span class="input-suffix">years</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group half">
+                            <label for="ref2CreditLimit">Credit Limit</label>
+                            <div class="input-with-prefix">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="ref2CreditLimit" name="ref2CreditLimit" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="ref2PaymentTerms">Payment Terms</label>
+                            <input type="text" id="ref2PaymentTerms" name="ref2PaymentTerms">
+                        </div>
+                        
+                        <div class="form-group half">
+                            <label for="ref2PaymentHistory">Payment History</label>
+                            <select id="ref2PaymentHistory" name="ref2PaymentHistory">
+                                <option value="">Select</option>
+                                <option value="excellent">Excellent</option>
+                                <option value="good">Good</option>
+                                <option value="fair">Fair</option>
+                                <option value="poor">Poor</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="reference-section">
+                    <h4>Reference 3</h4>
+                    <div class="form-group">
+                        <label for="ref3Company">Company <span class="required">*</span></label>
+                        <input type="text" id="ref3Company" name="ref3Company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ref3ContactPerson">Contact Person <span class="required">*</span></label>
+                        <input type="text" id="ref3ContactPerson" name="ref3ContactPerson" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="ref3Duration">Relationship Duration <span class="required">*</span></label>
+                            <div class="input-with-suffix">
+                                <input type="number" id="ref3Duration" name="ref3Duration" min="0" required>
+                                <span class="input-suffix">years</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group half">
+                            <label for="ref3CreditLimit">Credit Limit</label>
+                            <div class="input-with-prefix">
+                                <span class="input-prefix">$</span>
+                                <input type="number" id="ref3CreditLimit" name="ref3CreditLimit" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group half">
+                            <label for="ref3PaymentTerms">Payment Terms</label>
+                            <input type="text" id="ref3PaymentTerms" name="ref3PaymentTerms">
+                        </div>
+                        
+                        <div class="form-group half">
+                            <label for="ref3PaymentHistory">Payment History</label>
+                            <select id="ref3PaymentHistory" name="ref3PaymentHistory">
+                                <option value="">Select</option>
+                                <option value="excellent">Excellent</option>
+                                <option value="good">Good</option>
+                                <option value="fair">Fair</option>
+                                <option value="poor">Poor</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Management Assessment</h3>
+                <div class="form-group">
+                    <label for="keyManagementPersonnel">Key Management Personnel <span class="required">*</span></label>
+                    <textarea id="keyManagementPersonnel" name="keyManagementPersonnel" rows="3" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="yearsOfExperience">Years of Industry Experience <span class="required">*</span></label>
+                    <input type="number" id="yearsOfExperience" name="yearsOfExperience" min="0" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="previousBusinessSuccess">Previous Business Success</label>
+                    <textarea id="previousBusinessSuccess" name="previousBusinessSuccess" rows="2"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="educationalBackground">Educational Background</label>
+                    <textarea id="educationalBackground" name="educationalBackground" rows="2"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="industryRecognition">Industry Recognition/Awards</label>
+                    <textarea id="industryRecognition" name="industryRecognition" rows="2"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="professionalAssociations">Professional Associations</label>
+                    <textarea id="professionalAssociations" name="professionalAssociations" rows="2"></textarea>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn prev-btn">Previous</button>
+                    <button type="button" class="btn next-btn">Next: Documentation</button>
+                </div>
+            </section>
+
+            <!-- Step 7: Documentation -->
+            <section class="form-step" id="step7">
+                <h3>Required Documentation</h3>
+                
+                <div class="section-info">
+                    <p>Please upload the following required documents to complete your application.</p>
+                </div>
+                
+                <div class="form-group">
+                    <label for="businessRegistration">Business Registration Certificate <span class="required">*</span></label>
+                    <input type="file" id="businessRegistration" name="businessRegistration" accept=".pdf,.jpg,.jpeg,.png" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="taxRegistration">Tax Registration Certificate <span class="required">*</span></label>
+                    <input type="file" id="taxRegistration" name="taxRegistration" accept=".pdf,.jpg,.jpeg,.png" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="financialStatements">Financial Statements (last 2-3 years if available) <span class="required">*</span></label>
+                    <input type="file" id="financialStatements" name="financialStatements" accept=".pdf,.xlsx,.xls" multiple required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="bankStatements">Bank Statements (last 6 months) <span class="required">*</span></label>
+                    <input type="file" id="bankStatements" name="bankStatements" accept=".pdf,.xlsx,.xls" multiple required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="tradeReferences">Trade Reference Confirmations</label>
+                    <input type="file" id="tradeReferences" name="tradeReferences" accept=".pdf,.jpg,.jpeg,.png" multiple>
+                </div>
+                
+                <div class="form-group">
+                    <label for="managementProfiles">Management Profiles/CVs <span class="required">*</span></label>
+                    <input type="file" id="managementProfiles" name="managementProfiles" accept=".pdf,.doc,.docx" multiple required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="personalGuarantee">Personal Guarantee (if applicable)</label>
+                    <input type="file" id="personalGuarantee" name="personalGuarantee" accept=".pdf,.jpg,.jpeg,.png">
+                </div>
+                
+                <div class="form-group">
+                    <label for="otherDocuments">Other Documents</label>
+                    <input type="file" id="otherDocuments" name="otherDocuments" accept=".pdf,.jpg,.jpeg,.png,.xlsx,.xls,.doc,.docx" multiple>
+                </div>
+                
+                <div class="form-group">
+                    <label for="otherDocumentsDescription">Description of Other Documents</label>
+                    <textarea id="otherDocumentsDescription" name="otherDocumentsDescription" rows="2"></textarea>
+                </div>
+                
+                <div class="form-group terms-container">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+                        <span>I confirm that all information provided is accurate and complete. I authorize Westcon Comstor Middle East to verify the information provided and to obtain additional information as needed for credit assessment purposes. <span class="required">*</span></span>
+                    </label>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn prev-btn">Previous</button>
+                    <button type="submit" class="btn submit-btn">Submit Application</button>
+                </div>
+            </section>
+        </form>
+        
+        <div class="form-submitted-message" style="display: none;">
+            <h2>Thank You!</h2>
+            <p>Your credit assessment application has been submitted successfully.</p>
+            <p>Application Reference Number: <span id="referenceNumber"></span></p>
+            <p>We will review your application and contact you within 5 business days.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Westcon Comstor Middle East. All rights reserved.</p>
+            <p>For assistance, please contact <a href="mailto:credit@westconcomstor-me.com">credit@westconcomstor-me.com</a></p>
+        </div>
+    </footer>
+
+    <script src="form-validation.js"></script>
+</body>
+</html>
